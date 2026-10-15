@@ -54,7 +54,7 @@ skeleton/
 
 | 576px 이상 | 576px 미만 (토글 메뉴 열림) |
 |---|---|
-| ![navbar](images/01-navbar.png) | ![navbar mobile](images/01-navbar-576.png) |
+| ![navbar](images/01-navbar.png) | ![navbar mobile](images/01-navbar(576px).png) |
 
 **구현한 것**
 - 로고 `ThRead`를 `Th`(흰색)와 `Read`(#fe4a51)로 나눠 색을 다르게 적용하고, 로고와 Hero 제목에 GmarketSansTTFMedium, 메뉴에 SBAggro 폰트를 적용했다.
@@ -105,7 +105,7 @@ skeleton/
 
 | 576px 이상 (4열) | 576px 미만 (1열) |
 |---|---|
-| ![genre](images/04-genre-list.png) | ![genre mobile](images/04-genre-list-576.png) |
+| ![genre](images/04-genre_list.png) | ![genre mobile](images/04-genre_list(576px).png) |
 
 **구현한 것**
 - Flexbox(`display: flex; flex-wrap: wrap; gap: 1rem`)로 한 줄에 4개씩 배치했다.
@@ -123,7 +123,7 @@ skeleton/
 
 | 576px 이상 (3열) | 576px 미만 (1열) |
 |---|---|
-| ![thread](images/05-popular-thread.png) | ![thread mobile](images/05-popular-thread-576.png) |
+| ![thread](images/05-popular_thread.png) | ![thread mobile](images/05-popular_thread(576px).png) |
 
 **구현한 것**
 - Bootstrap Card와 `row-cols-1 row-cols-sm-3`으로 576px 이상 3열, 미만 1열을 구성했다.
@@ -142,7 +142,7 @@ skeleton/
 
 | Hero | 쓰레드 섹션 + 푸터 |
 |---|---|
-| ![main hero](images/06-main-hero.png) | ![main footer](images/06-main-thread-footer.png) |
+| ![main hero](images/06-main(uxdesign1).png) | ![main footer](images/06-main(uxdesign2).png) |
 
 **구현한 것**
 - 01~05의 콘텐츠를 순서대로 결합해 `06-main.html` / `06-main.css` 하나로 만들었다.
@@ -175,7 +175,7 @@ skeleton/
 
 ### 4-7. 로그아웃 확인 Modal (F308)
 
-![logout modal](images/06-main-logout-modal.png)
+![logout modal](images/06-main(logoutmodal).png)
 
 **구현한 것**
 - Navbar의 "로그아웃"에 `data-bs-toggle="modal"`, `data-bs-target="#logoutModal"`을 붙여서 클릭하면 Modal이 열리게 했다.
