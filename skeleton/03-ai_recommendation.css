@@ -1,0 +1,57 @@
+
+/* AI 추천 섹션 전용 폰트 */
+@font-face {
+  font-family: "SBAggroOTF_L";
+  src: url("assets/fonts/SBAggroOTF_L.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GmarketSansTTFMedium";
+  src: url("assets/fonts/GmarketSansTTFMedium.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* 섹션 전체 */
+.ai-recommendation {
+  width: 80%;
+  margin-inline: auto;
+  color: #333;
+}
+
+/* 도서 이미지 배치 */
+.ai-recommendation .recommendation-books {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* 공통 도서 이미지 */
+.ai-recommendation .recommendation-book {
+  width: 30%;
+  max-width: 120px;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+/* 중앙 도서 이미지 */
+.ai-recommendation .recommendation-book--featured {
+  width: 35%;
+  max-width: 140px;
+}
+
+/* 섹션 제목 */
+.ai-recommendation .recommendation-title {
+  font-family: "GmarketSansTTFMedium", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* 강조 문구 */
+.ai-recommendation .recommendation-highlight {
+  color: #fe4a51;
+  font-family: "SBAggroOTF_L", sans-serif;
+  font-size: 1.3rem;
+}

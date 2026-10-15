@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ThRead - Navbar & Hero</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- 개별 CSS 파일 연결 -->
+    <link rel="stylesheet" href="01-navbar.css" />
+  </head>
+  <body>
+    <header class="hero-section">
+      <div class="hero-overlay"></div>
+
+      <nav class="navbar navbar-expand-sm custom-navbar px-4 py-3">
+        <div class="container-fluid">
+          <a class="navbar-brand navbar-brand-custom" href="#">
+            <span class="brand-th">Th</span><span class="brand-read">Read</span>
+          </a>
+
+          <button
+            class="navbar-toggler border-0 shadow-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="#">쓰레드</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">도서 검색</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">마이 페이지</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container hero-content">
+        <h1 class="hero-title">
+          AI 기반 도서 분석 및<br class="d-sm-none"> 창작 지원 통합 솔루션 서비스
+        </h1>
+        <div class="mt-3">
+          <span class="navbar-brand-custom fs-4">
+            <span class="brand-th">Th</span><span class="brand-read">Read</span>
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

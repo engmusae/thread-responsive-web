@@ -1,0 +1,40 @@
+/* 공통 폰트 정의 */
+@font-face {
+  font-family: "GmarketSansTTFMedium";
+  src: url("assets/fonts/GmarketSansTTFMedium.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 베스트셀러 섹션 스타일 */
+.bestseller-section {
+  width: 80%;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.bestseller-title {
+  font-family: "GmarketSansTTFMedium", sans-serif !important;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.bestseller-img {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.carousel-control-prev {
+  display: none !important;
+}
+.carousel-control-next {
+  width: 5%;
+}
