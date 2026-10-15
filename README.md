@@ -23,7 +23,7 @@ skeleton/
 ├─ 04-genre_list.html / .css      # F305
 ├─ 05-popular_thread.html / .css  # F306
 ├─ 06-main.html / 06-main.css     # F307, F308 (결합 + 로그아웃 Modal)
-└─ screenshots/                   # README용 실행 화면
+└─ images/                   # README용 실행 화면
 ```
 
 ## 2. 실행 방법
@@ -54,7 +54,7 @@ skeleton/
 
 | 576px 이상 | 576px 미만 (토글 메뉴 열림) |
 |---|---|
-| ![navbar](screenshots/01-navbar.png) | ![navbar mobile](screenshots/01-navbar-576.png) |
+| ![navbar](images/01-navbar.png) | ![navbar mobile](images/01-navbar-576.png) |
 
 **구현한 것**
 - 로고 `ThRead`를 `Th`(흰색)와 `Read`(#fe4a51)로 나눠 색을 다르게 적용하고, 로고와 Hero 제목에 GmarketSansTTFMedium, 메뉴에 SBAggro 폰트를 적용했다.
@@ -67,15 +67,11 @@ skeleton/
 - Hero 안에서 overlay(`z-index: 1`) → 내용(`z-index: 2`) → Navbar(`z-index: 1030`) 순으로 쌓이는 구조를 직접 설계해 보면서 `z-index`가 쌓임 순서를 정하는 값이라는 감이 생겼다.
 - Bootstrap의 breakpoint(sm = 576px, md = 768px, lg = 992px)와 `d-sm-none` 같은 표시 유틸리티 클래스의 의미를 알게 됐다.
 
-**어려웠던 점**
-- Bootstrap이 이미 `.nav-link` 색상을 지정하고 있어서, 내 CSS가 먼저 적용되지 않았다. 그래서 `!important`가 왜 쓰이는지, 그리고 남발하면 왜 위험한지를 같이 고민하게 됐다.
-- 투명한 Navbar는 모바일에서 메뉴를 펼쳤을 때 흰 글씨가 배경 이미지 위에 그대로 올라가서 가독성이 아슬아슬했다. Hero overlay로 어둡게 깔아서 해결했다.
-
 ---
 
 ### 4-2. Bestseller (F303)
 
-![bestseller](screenshots/02-bestseller.png)
+![bestseller](images/02-bestseller.png)
 
 **구현한 것**
 - 12권을 4권씩 3개 슬라이드로 묶고 `data-bs-ride="carousel"`, `data-bs-interval`로 자동 전환되게 했다.
@@ -87,14 +83,11 @@ skeleton/
 - Carousel은 JS를 거의 쓰지 않고 `carousel-inner` / `carousel-item` 구조와 `data-bs-*` 속성만으로 동작한다는 점이 신기했다.
 - `object-fit: cover`를 쓰면 이미지를 고정 크기에 넣어도 찌그러지지 않는다는 것을 배웠다.
 
-**어려웠던 점**
-- 이미지에 `img-fluid`(`height: auto`)가 붙어 있는데 동시에 높이 220px을 고정해야 해서, 두 규칙이 충돌했다. 같은 명시도일 때는 **나중에 선언된 규칙이 이긴다**는 점을 확인하고 CSS 로드 순서를 신경 쓰게 됐다.
-
 ---
 
 ### 4-3. AI Recommendation (F304)
 
-![ai recommendation](screenshots/03-ai-recommendation.png)
+![ai recommendation](images/03-ai-recommendation.png)
 
 **구현한 것**
 - 섹션 폭 80%에 가운데 정렬, Bootstrap 그리드로 좌측(도서 3권) : 우측(소개 문구) = `col-md-7` : `col-md-5`를 구성했다.
@@ -106,16 +99,13 @@ skeleton/
 - 12칸 그리드에서 7:5 같은 비율을 클래스 하나로 만들 수 있다는 것을 익혔다.
 - 이미지 폭을 `%`로 주고 `max-width`와 `aspect-ratio`를 함께 쓰면 화면이 줄어도 비율이 유지되면서 작아진다는 것을 알게 됐다.
 
-**어려웠던 점**
-- 처음에는 이 섹션의 CSS 파일이 폴더에 없어서 HTML만 보고 스타일을 짐작해야 했다. 나중에 원본 CSS를 확인하고 폭, 간격, 폰트 크기를 원래 값에 맞춰서 정리했다. **스타일은 항상 원본 파일이 기준**이라는 것을 배웠다.
-
 ---
 
 ### 4-4. Genre List (F305)
 
 | 576px 이상 (4열) | 576px 미만 (1열) |
 |---|---|
-| ![genre](screenshots/04-genre-list.png) | ![genre mobile](screenshots/04-genre-list-576.png) |
+| ![genre](images/04-genre-list.png) | ![genre mobile](images/04-genre-list-576.png) |
 
 **구현한 것**
 - Flexbox(`display: flex; flex-wrap: wrap; gap: 1rem`)로 한 줄에 4개씩 배치했다.
@@ -127,17 +117,13 @@ skeleton/
 - `flex: 0 0 <basis>`가 "늘어나지도 줄어들지도 않고 이 크기로 고정"이라는 뜻임을 이해했다.
 - 장르명을 이미지 위에 올리려면 부모에 `position: relative`, 글자에 `position: absolute`를 쓰는 패턴을 익혔다.
 
-**어려웠던 점**
-- `gap`이 있을 때 4열의 정확한 폭을 구하는 계산이 처음에는 헷갈렸다. 한 줄에 `gap`이 3개 들어가므로 `(100% - 3rem) / 4`가 된다는 것을 직접 그려 보면서 이해했다.
-- 10개 아이템이라 마지막 줄에 2개만 남는데, 이건 요구사항 예시와 같은 모양이라 그대로 두었다.
-
 ---
 
 ### 4-5. Popular Thread (F306)
 
 | 576px 이상 (3열) | 576px 미만 (1열) |
 |---|---|
-| ![thread](screenshots/05-popular-thread.png) | ![thread mobile](screenshots/05-popular-thread-576.png) |
+| ![thread](images/05-popular-thread.png) | ![thread mobile](images/05-popular-thread-576.png) |
 
 **구현한 것**
 - Bootstrap Card와 `row-cols-1 row-cols-sm-3`으로 576px 이상 3열, 미만 1열을 구성했다.
@@ -150,16 +136,13 @@ skeleton/
 - **CSS 명시도**를 처음으로 제대로 체험했다. 단순히 `.page-link`만 쓰면 Bootstrap에 밀리고, 부모 클래스를 붙여 명시도를 높이면 `!important` 없이 덮어쓸 수 있었다.
 - `margin-top: auto`가 flex 컨테이너 안에서 남는 공간을 밀어내서 요소를 맨 아래로 보내는 원리를 이해했다.
 
-**어려웠던 점**
-- 카드마다 본문 길이가 달라서 하단 영역 높이가 들쭉날쭉했다. `.thread-card { height: 100% }`와 flex column을 같이 써야 한다는 것을 알아내기까지 시간이 걸렸다.
-
 ---
 
 ### 4-6. 메인 페이지 결합 (F307)
 
 | Hero | 쓰레드 섹션 + 푸터 |
 |---|---|
-| ![main hero](screenshots/06-main-hero.png) | ![main footer](screenshots/06-main-thread-footer.png) |
+| ![main hero](images/06-main-hero.png) | ![main footer](images/06-main-thread-footer.png) |
 
 **구현한 것**
 - 01~05의 콘텐츠를 순서대로 결합해 `06-main.html` / `06-main.css` 하나로 만들었다.
@@ -192,7 +175,7 @@ skeleton/
 
 ### 4-7. 로그아웃 확인 Modal (F308)
 
-![logout modal](screenshots/06-main-logout-modal.png)
+![logout modal](images/06-main-logout-modal.png)
 
 **구현한 것**
 - Navbar의 "로그아웃"에 `data-bs-toggle="modal"`, `data-bs-target="#logoutModal"`을 붙여서 클릭하면 Modal이 열리게 했다.
@@ -204,9 +187,6 @@ skeleton/
 - Bootstrap Modal은 JS 코드를 직접 쓰지 않고 `data-bs-*` 속성만으로 열고 닫을 수 있다는 것을 배웠다.
 - 접근성을 위해 `aria-labelledby`, `aria-label` 같은 속성도 함께 써야 한다는 것을 알게 됐다.
 - 모바일에서 토글 메뉴가 열린 상태로 Modal을 열면 겹쳐 보일 수 있어서, 메뉴 항목을 누르면 메뉴가 먼저 접히게 처리했다.
-
-**어려웠던 점**
-- 로그아웃 버튼을 눌렀을 때 실제로 로그아웃되는 동작(세션 종료, 로그인 페이지 이동)은 백엔드가 없어서 구현하지 못했다. 이번 단계에서는 화면과 Modal 동작까지만 구현하고, 연결 지점은 주석으로 표시해 두었다.
 
 ---
 
